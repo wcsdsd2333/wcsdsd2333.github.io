@@ -1,4 +1,4 @@
-# <div style="position: absolute; top: 120px; left: 40%; transform: translate(-50%, -50%); z-index: 2; font-family: 'Times New Roman', serif; font-size: 48px; color: White; text-align: center;">Welcome to Wang Cong's homepage!</div>
+# <div style="position: absolute; top: 120px; left: 45%; transform: translate(-50%, -50%); z-index: 2; font-family: 'Times New Roman', serif; font-size: 48px; color: White; text-align: center;">Welcome to Wang Cong's homepage!</div>
 
 ## </br></br></br></br></br></br></br><div style="font-family:'仿宋'; font-size:25px">一、生物信息学笔记</div>
 ==特别注意==：本门课并非教授编程技能，而是训练学生**如何使用编程解决实际问题**。
@@ -131,8 +131,8 @@ cong-wan23@mails.tsinghua.edu.cn
     .picture {
         z-index: 2;
         position: absolute;
-        top: var(--pos-y, 120px);
-        left: var(--pos-x, 60%);
+        top: var(--pos-y, 140px);
+        left: var(--pos-x, 65%);
     }
 
     .container {
