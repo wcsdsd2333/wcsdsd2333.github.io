@@ -116,7 +116,7 @@ cong-wan23@mails.tsinghua.edu.cn
 </div>
 
 <div class=picture>
-        <img src=商务2.jpeg width=20%>
+        <img src=商务2.jpeg width=25%>
 </div>
 
 <style>
@@ -131,8 +131,8 @@ cong-wan23@mails.tsinghua.edu.cn
     .picture {
         z-index: 2;
         position: absolute;
-        top: var(--pos-y, 140px);
-        left: var(--pos-x, 65%);
+        top: var(--pos-y, 160px);
+        left: var(--pos-x, 75%);
     }
 
     .container {
