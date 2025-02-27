@@ -146,7 +146,6 @@ cong-wan23@mails.tsinghua.edu.cn
     body {
         margin: 0;
         padding: 0;
-        overflow: hidden;
         background: linear-gradient(to right, rgb(237, 244, 242), rgb(74, 204, 204));
     }
 </style>
