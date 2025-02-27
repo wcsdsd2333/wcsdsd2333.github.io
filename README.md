@@ -132,7 +132,7 @@ cong-wan23@mails.tsinghua.edu.cn
         z-index: 2;
         position: absolute;
         top: var(--pos-y, 170px);
-        left: var(--pos-x, 85%);
+        left: var(--pos-x, 80%);
     }
 
     .container {
