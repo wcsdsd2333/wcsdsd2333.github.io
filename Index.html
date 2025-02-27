@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="div-style%22position-absolute-top-120px-left-30-transform-translate-50--50-z-index-2-font-family-times-new-roman-serif-font-size-48px-color-white-text-align-center%22welcome-to-wang-congs-homepagediv"><div style="position: absolute; top: 120px; left: 30%; transform: translate(-50%, -50%); z-index: 2; font-family: 'Times New Roman', serif; font-size: 48px; color: white; text-align: center;">Welcome to Wang Cong's homepage!</div></h1>
+<h2 id="brbrbrbrbrbrbrdiv-style%22font-family%E4%BB%BF%E5%AE%8B-font-size25px%22%E4%B8%80%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E7%AC%94%E8%AE%B0div"></br></br></br></br></br></br></br><div style="font-family:'仿宋'; font-size:25px">一、生物信息学笔记</div></h2>
+<p>==特别注意==：本门课并非教授编程技能，而是训练学生<strong>如何使用编程解决实际问题</strong>。</p>
+<h3 id="font-size4%E4%B8%80-%E8%AF%BE%E7%A8%8B%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E4%BB%8B%E7%BB%8Dfont"><font size=4>(一) <strong>课程基本信息介绍</strong></font></h3>
+<ol>
+<li>先修课程要求：实际上并无硬性要求，只要具有<strong>高数基础</strong>，有一定<strong>编程能力</strong>，<strong>接触过Linux</strong>即可。</li>
+<li>后续课程推荐：<strong>《基于Python的科学与数值计算》</strong>、《计算机程序设计基础 (Python)》、《Python程序设计进阶》。</li>
+<li>课程基本安排
+<table>
+<thead>
+<tr>
+<th style="text-align:center">周数</th>
+<th style="text-align:center">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1-4</td>
+<td style="text-align:center">Linux(bash)</td>
+</tr>
+<tr>
+<td style="text-align:center">5-16</td>
+<td style="text-align:center">R</td>
+</tr>
+<tr>
+<td style="text-align:center">11-16</td>
+<td style="text-align:center">Python</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>参考资料以及实践教程：详见<a href="https://365.kdocs.cn/l/caAbfIt5y8Fk">教学大纲</a>
+</br></li>
+</ol>
+<h3 id="font-size4%E4%BA%8C-%E8%AF%BE%E7%A8%8B%E7%89%B9%E8%89%B2font"><font size=4>(二) <strong>课程特色</strong></font></h3>
+<ol>
+<li>教学目标
+<ul>
+<li>介绍基本概念和原理；</li>
+<li>介绍生物信息可以研究的问题和方向，从而引发实践和研究的兴趣；</li>
+<li>==构建学习和实践的框架==</li>
+</ul>
+</li>
+<li>学习方法（Peer Learning）——基于费曼学习法</li>
+</ol>
+  <div align=center>
+    <img src=image.png width=60%>
+  </div>
+  </br>
+<h3 id="font-size4%E4%B8%89-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6bioinformatics%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%94%9F%E7%89%A9%E5%AD%A6font"><font size=4>(三) <strong>生物信息学（bioinformatics）与传统生物学</strong></font></h3>
+<table>
+  <tr>
+    <th>生物信息学四步走</th>
+    <td>Information</td>
+    <td>Analysis</td>
+    <td>Modeling</td>
+    <td><strong>Question</strong></td>
+  </tr>
+  <tr>
+    <th>传统生物学四步走</th>
+    <td><strong>Question</strong></td>
+    <td>Information</td>
+    <td>Analysis</td>
+    <td>Modeling</td>
+  </tr>
+</table>
+<p>  如下图，传统生物学属于科学发展第三范式，生物信息学作为数据时代的产物则是进入到第四范式。
+<img src="image-1.png" alt="alt text"></p>
+<h3 id="font-size4%E5%9B%9B-%E7%AE%97%E6%B3%95algorithm%E4%B8%8E%E6%A8%A1%E5%9E%8Bmodelfont"><font size=4>(四) ==<strong>算法(algorithm)与模型(model)</strong>==</font></h3>
+<ol>
+<li>算法：
+<ul>
+<li>排序算法： 快速排序、归并排序等</li>
+<li>动态规划算法： 矩阵链乘法、最长公共子序列等</li>
+</ul>
+</li>
+<li>模型：
+<ul>
+<li>概率模型： 隐马尔可夫模型（HMM）、贝叶斯网络等</li>
+<li>机器学习模型： 线性回归、逻辑回归、神经网络等</li>
+</ul>
+</li>
+<li>算法与模型的区别：
+<ul>
+<li><strong>算法</strong>是一种解决问题的步骤或方法</li>
+<li><strong>模型</strong>是算法作用于数据后对现实世界某种现象的抽象表示</li>
+<li>算法可以用来训练模型，模型可以用来预测和分析数据</li>
+</ul>
+</li>
+</ol>
+<h3 id="font-size4%E4%BA%94-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%BA%94%E7%94%A8font"><font size=4>(五) <strong>生物信息学应用</strong></font></h3>
+<ul>
+<li>基因组学： 基因组测序、基因功能预测、变异分析等</li>
+<li>转录组学： RNA 测序、基因表达分析、可变剪接等</li>
+<li>蛋白质组学： 蛋白质结构预测、功能注释等</li>
+<li>代谢组学： 代谢物鉴定、代谢通路分析等</li>
+</ul>
+<h3 id="font-size4%E5%85%AD-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%B7%A5%E5%85%B7font"><font size=4>(六) <strong>生物信息学工具</strong></font></h3>
+<ul>
+<li>序列分析工具： BLAST、Clustal Omega 等</li>
+<li>结构预测工具： PhyreStorm、AlphaFold 等</li>
+<li>功能注释工具： GO、KEGG 等</li>
+</ul>
+<h3 id="font-size4%E4%B8%83-%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BFfont"><font size=4>(七) <strong>生物信息学发展趋势</strong></font></h3>
+<ul>
+<li>大数据驱动： 利用海量数据进行科学研究和临床应用</li>
+<li>人工智能： 利用深度学习等技术进行更精准的预测和分析</li>
+</ul>
+<h2 id="font-face%22%E4%BB%BF%E5%AE%8B%22-size5%E4%BA%8C%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92font"><font face="仿宋" size=5>二、生物信息学习计划</font></h2>
+<h3 id="font-size4%E7%AC%AC-1-4-%E5%91%A8linux-%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%BA%94%E7%94%A8font"><font size=4>第 1-4 周：Linux 基础与生物信息学应用</font></h3>
+<ul>
+<li><strong>目标</strong>：掌握 Linux 基本操作和生物信息学工具。</li>
+<li><strong>内容</strong>：
+<ul>
+<li>第 1 周：Linux 文件系统与基本命令（<code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>）。</li>
+<li>第 2 周：文本处理工具（<code>grep</code>, <code>awk</code>, <code>sed</code>, <code>cut</code>, <code>sort</code>）。</li>
+<li>第 3 周：Shell 脚本编写与自动化。</li>
+<li>第 4 周：生物信息学工具安装与使用（如 FastQC、BLAST）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="font-size4%E7%AC%AC-5-10-%E5%91%A8r-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%88%86%E6%9E%90font"><font size=4>第 5-10 周：R 语言基础与生物信息学分析</font></h3>
+<ul>
+<li><strong>目标</strong>：掌握 R 语言基础及其在生物信息学中的应用。</li>
+<li><strong>内容</strong>：
+<ul>
+<li>第 5 周：R 语言基础（变量、数据类型、函数、包管理）。</li>
+<li>第 6 周：数据导入与处理（<code>read.table</code>, <code>dplyr</code>）。</li>
+<li>第 7 周：数据可视化（<code>ggplot2</code>）。</li>
+<li>第 8 周：RNA-Seq 数据预处理（质量控制、标准化）。</li>
+<li>第 9 周：差异表达分析（<code>DESeq2</code>）。</li>
+<li>第 10 周：功能富集分析（<code>clusterProfiler</code>）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="font-size4%E7%AC%AC-11-16-%E5%91%A8%E9%AB%98%E7%BA%A7%E5%88%86%E6%9E%90%E4%B8%8E-python-%E9%80%89%E6%8B%A9%E6%80%A7%E4%BD%BF%E7%94%A8font"><font size=4>第 11-16 周：高级分析与 Python 选择性使用</font></h3>
+<ul>
+<li><strong>目标</strong>：深入学习生物信息学分析，选择性使用 Python。</li>
+<li><strong>内容</strong>：
+<ul>
+<li>第 11 周：单细胞 RNA-Seq 数据分析（<code>Seurat</code>）。</li>
+<li>第 12 周：基因组变异分析（<code>VCFtools</code>, <code>snpEff</code>）。</li>
+<li>第 13 周：Python 基础（变量、数据类型、函数）。</li>
+<li>第 14 周：Python 数据处理（<code>pandas</code>, <code>numpy</code>）。</li>
+<li>第 15 周：Python 数据可视化（<code>matplotlib</code>, <code>seaborn</code>）。</li>
+<li>第 16 周：项目实践与总结（srt）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div style="font-family: '楷体'; font-size: 20px;">
+清华大学  致理书院</br>
+王聪</br>
+cong-wan23@mails.tsinghua.edu.cn
+</div>
+<div class=container>
+    <div align=center class=background>
+        <img src=background.png>
+    </div>
+</div>
+<div class=picture>
+        <img src=商务2.jpeg width=85%>
+</div>
+<style>
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .picture {
+        z-index: 2;
+        position: absolute;
+        top: var(--pos-y, 40px);
+        left: var(--pos-x, 75%);
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: linear-gradient(to right, rgb(237, 244, 242), rgb(74, 204, 204));
+    }
+</style>
+</body>
+</html>
