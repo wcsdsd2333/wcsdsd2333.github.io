@@ -123,7 +123,7 @@ cong-wan23@mails.tsinghua.edu.cn
     .background {
         position: absolute;
         top: 0;
-        left: 20%;
+        left: 15%;
         width: 60%;
         z-index: 1;
     }
@@ -131,8 +131,8 @@ cong-wan23@mails.tsinghua.edu.cn
     .picture {
         z-index: 2;
         position: absolute;
-        top: var(--pos-y, 170px);
-        left: var(--pos-x, 80%);
+        top: 0
+        left: var(--pos-x, 75%);
     }
 
     .container {
